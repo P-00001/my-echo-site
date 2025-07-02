@@ -7,9 +7,10 @@ add index.html
 <head>
   <meta charset="UTF-8">
   <title>回聲善信會</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: "細明體", serif;
+      font-family: 'Noto Serif TC', serif;
       background: #f3f2f0;
       color: #333;
       text-align: center;
@@ -25,11 +26,20 @@ add index.html
       background: rgba(0,0,0,0.9);
       color: #ff6666;
       font-size: 2em;
-      font-family: "微軟正黑體";
+      font-family: 'Noto Serif TC', serif;
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 9999;
+    }
+    #trigger-btn {
+      font-size: 1.2em;
+      padding: 12px 24px;
+      background-color: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
     }
   </style>
 </head>
@@ -38,13 +48,23 @@ add index.html
 <h1>回聲善信會</h1>
 <p>——聲音，是靈魂最後的形狀。</p>
 
+<button id="trigger-btn">奉獻之音</button>
+
 <div id="warning">門已經打開了。</div>
 
 <script>
-  // 15 秒後自動彈窗
-  setTimeout(() => {
-    document.getElementById("warning").style.display = "flex";
-  }, 15000);
+  let clickCount = 0;
+  let triggered = false;
+
+  document.getElementById("trigger-btn").addEventListener("click", () => {
+    clickCount++;
+    if (clickCount === 3 && !triggered) {
+      triggered = true;
+      setTimeout(() => {
+        document.getElementById("warning").style.display = "flex";
+      }, 15000); // 15 秒後彈窗
+    }
+  });
 </script>
 
 </body>
