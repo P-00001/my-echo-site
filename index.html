@@ -1,71 +1,78 @@
-add index.html
-
-# my-echo-site
-彈窗測試網站
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>回聲善信會</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的首頁</title>
   <style>
     body {
-      font-family: 'Noto Serif TC', serif;
-      background: #f3f2f0;
+      font-family: "Helvetica Neue", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
       color: #333;
-      text-align: center;
-      padding-top: 100px;
     }
-    #warning {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      color: #ff6666;
-      font-size: 2em;
-      font-family: 'Noto Serif TC', serif;
+
+    header {
+      background-color: #4A90E2;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
       display: flex;
       justify-content: center;
-      align-items: center;
-      z-index: 9999;
     }
-    #trigger-btn {
-      font-size: 1.2em;
-      padding: 12px 24px;
-      background-color: #444;
+
+    nav a {
       color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 6px;
+      padding: 1rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
 
-<h1>回聲善信會</h1>
-<p>——聲音，是靈魂最後的形狀。</p>
+  <header>
+    <h1>歡迎來到我的網站</h1>
+    <p>這是我的個人首頁</p>
+  </header>
 
-<button id="trigger-btn">奉獻之音</button>
+  <nav>
+    <a href="#">首頁</a>
+    <a href="#">關於我</a>
+    <a href="#">作品集</a>
+    <a href="#">聯絡我</a>
+  </nav>
 
-<div id="warning">門已經打開了。</div>
+  <main>
+    <h2>你好，我是某某人 👋</h2>
+    <p>這是我透過 GitHub Pages 製作的第一個網站。我熱愛學習新事物，特別是前端開發與設計。</p>
+    <p>這裡將會展示我的作品、介紹自己，還會分享我學習的歷程。</p>
+  </main>
 
-<script>
-  let clickCount = 0;
-  let triggered = false;
-
-  document.getElementById("trigger-btn").addEventListener("click", () => {
-    clickCount++;
-    if (clickCount === 3 && !triggered) {
-      triggered = true;
-      setTimeout(() => {
-        document.getElementById("warning").style.display = "flex";
-      }, 15000); // 15 秒後彈窗
-    }
-  });
-</script>
+  <footer>
+    &copy; 2025 我的網站名稱
+  </footer>
 
 </body>
 </html>
