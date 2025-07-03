@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的首頁</title>
+  <title>回聲善信會 - 關於我們</title>
   <style>
     body {
       font-family: "Helvetica Neue", sans-serif;
@@ -21,19 +21,25 @@
     }
 
     nav {
-      background-color: #333;
       display: flex;
       justify-content: center;
+      background-color: #333;
+      padding: 1rem 0;
     }
 
     nav a {
+      background-color: #4A90E2;
       color: white;
-      padding: 1rem;
+      padding: 1rem 2rem;
+      margin: 0 0.5rem;
       text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
     }
 
     nav a:hover {
-      background-color: #555;
+      background-color: #357ABD;
     }
 
     main {
@@ -48,30 +54,39 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+
+    h1, h2 {
+      font-family: "DFKai-SB", serif;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>歡迎來到我的網站</h1>
-    <p>這是我的個人首頁</p>
+    <h1>回聲善信會</h1>
+    <p>關於我們</p>
   </header>
 
   <nav>
-    <a href="#">首頁</a>
-    <a href="#">關於我</a>
-    <a href="#">作品集</a>
-    <a href="#">聯絡我</a>
+    <a href="index.html">關於我們</a>
+    <a href="archive.html">聲紋資料室</a>
+    <a href="ritual.html">風景紀錄</a>
+    <a href="participate.html">聲紋奉獻</a>
   </nav>
 
   <main>
-    <h2>你好，我是某某人 👋</h2>
-    <p>這是我透過 GitHub Pages 製作的第一個網站。我熱愛學習新事物，特別是前端開發與設計。</p>
-    <p>這裡將會展示我的作品、介紹自己，還會分享我學習的歷程。</p>
+    <h2>協會宗旨</h2>
+    <p>我們致力於聲音文化的保存，並探索聲音背後的神秘與信仰。</p>
+
+    <h2>成立背景</h2>
+    <p>本協會成立於199X年，起源於對失落聲音的敬仰與保存。</p>
+
+    <h2>創辦人簡介</h2>
+    <p>創辦人：聲主（虛構人物），以蒐集聲紋為畢生使命。</p>
   </main>
 
   <footer>
-    &copy; 2025 我的網站名稱
+    &copy; since 1976
   </footer>
 
 </body>
