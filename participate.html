@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聲紋奉獻</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #4A90E2;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      background-color: #4A90E2;
+      color: white;
+      padding: 1rem 2rem;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #357ABD;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    button {
+      background-color: #4A90E2;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #357ABD;
+    }
+
+    /* Full-screen popup */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: red; /* Red text */
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem; /* Larger text */
+      text-align: center;
+      z-index: 1000;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    h1, h2 {
+      font-family: "DFKai-SB", serif;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>聲紋奉獻</h1>
+    <p>請上傳你的聲音</p>
+  </header>
+
+  <nav>
+    <a href="index.html">關於我們</a>
+    <a href="archive.html">聲紋資料室</a>
+    <a href="ritual.html">風景紀錄</a>
+    <a href="participate.html">聲紋奉獻</a>
+  </nav>
+
+  <main>
+    <button id="uploadBtn">上傳你的聲音</button>
+
+    <div id="popup" class="popup">
+      <p>祂正在傾聽...</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; since 1976
+  </footer>
+
+  <script>
+    let clickCount = 0;
+    const button = document.getElementById('uploadBtn');
+    const popup = document.getElementById('popup');
+
+    button.addEventListener('click', () => {
+      clickCount++;
+      if (clickCount === 3) {
+        popup.style.display = 'flex';
+        setTimeout(() => {
+          popup.style.display = 'none';
+          clickCount = 0; // Reset after popup closes
+        }, 10000);
+      }
+    });
+  </script>
+
+</body>
+</html>
